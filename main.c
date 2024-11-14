@@ -13,6 +13,8 @@
 #include "push_swap.h"
 #include<stdio.h>
 
+//aaaa
+
 static void	free_segments(char **segments)
 {
 	int	i;
