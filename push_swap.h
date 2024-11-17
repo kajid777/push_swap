@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/12 21:43:46 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:55:07 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ typedef struct Node
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
 
+	//bit_operations.c
+	int get_max_num(Node *ptr_list);
+	int get_max_bit_len(Node *ptr_list);
+	
 	//node_operations_1.c
 	void sa(Node **topoflist_a);
 	void sb(Node **topoflist_b);
