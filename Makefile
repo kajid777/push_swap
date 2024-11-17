@@ -6,7 +6,7 @@
 #    By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 20:14:26 by dkajiwar          #+#    #+#              #
-#    Updated: 2024/11/15 15:53:30 by dkajiwar         ###   ########.fr        #
+#    Updated: 2024/11/17 15:16:47 by dkajiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 HEAD = push_swap.h
-SRCS = main.c node_initialization.c bit_operations.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c
+SRCS = main.c node_initialization.c bit_operations.c utils.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -25,6 +25,7 @@ $(NAME): $(OBJS)
 
 $(OBJS): $(SRCS)
 	$(CC) $(CFLAGS) -c main.c -o main.o
+	$(CC) $(CFLAGS) -c utils.c -o utils.o
 	$(CC) $(CFLAGS) -c node_operations_1.c -o node_operations_1.o
 	$(CC) $(CFLAGS) -c node_operations_2.c -o node_operations_2.o
 	$(CC) $(CFLAGS) -c node_operations_3.c -o node_operations_3.o
