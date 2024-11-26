@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 20:15:47 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/11 17:42:43 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/26 20:27:35 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,12 @@ int main(int argc, char **argv)
     // if (argc >= 3)
     // {
     topoflist_a = make_list_x(argc, create_int_array(argc, argv));
-    ft_printf("before sort\n");
+    ft_printf("before sort a\n");
     print_all_node(topoflist_a);
+    
     sort(&topoflist_a, &topoflist_b);
+    ft_printf("test1\n");
+
     ft_printf("after sort\n");
     ft_printf("stack a\n");
     print_all_node(topoflist_a);
