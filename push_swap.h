@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/17 15:17:49 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/26 22:15:40 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ typedef struct Node
 
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
-
+	int move_based_on_bit(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int bit_index, int stack_size);
+	void restore_stack_b(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int moved_count);
+	
 	//utils.c
 	int	get_stack_size(Node *list_top);
 
