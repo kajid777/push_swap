@@ -6,7 +6,7 @@
 #    By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 20:14:26 by dkajiwar          #+#    #+#              #
-#    Updated: 2024/11/17 15:16:47 by dkajiwar         ###   ########.fr        #
+#    Updated: 2024/11/28 18:58:05 by dkajiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 HEAD = push_swap.h
-SRCS = main.c node_initialization.c bit_operations.c utils.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c
+SRCS = main.c node_initialization.c bit_operations.c utils.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c simple_sort.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -33,6 +33,8 @@ $(OBJS): $(SRCS)
 	$(CC) $(CFLAGS) -c sort.c -o sort.o
 	$(CC) $(CFLAGS) -c handle_errors.c -o handle_errors.o
 	$(CC) $(CFLAGS) -c node_initialization.c -o node_initialization.o
+	$(CC) $(CFLAGS) -c simple_sort.c -o simple_sort.o
+
 
 clean:
 	make -C ./ft_printf clean

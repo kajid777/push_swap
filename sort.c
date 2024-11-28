@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 22:47:34 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/27 18:35:38 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:02:24 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b)
 	max_bit_len = get_max_bit_len(*ptr_topoflist_a);
 	init_stack_a_size = get_stack_size(*ptr_topoflist_a);
 	i = 0;
+    if (init_stack_a_size <= 5)
+    {
+        simple_sort(ptr_topoflist_a, ptr_topoflist_b);
+        return;
+    }
     while (i < max_bit_len)
     {
         int moved_count = move_based_on_bit(ptr_topoflist_a, ptr_topoflist_b, i, init_stack_a_size);
@@ -84,10 +89,12 @@ int move_based_on_bit(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int bit_in
         head_a = *ptr_topoflist_a;
         if (((head_a->data_num >> bit_index) & 1) == 1)
         {
+	        ft_printf("ra\n");
             ra(ptr_topoflist_a);
         }
         else
         {
+        	ft_printf("pb\n");
             pb(ptr_topoflist_a, ptr_topoflist_b);
             moved_count++;
         }
@@ -104,6 +111,7 @@ void restore_stack_b(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int moved_c
 	j = 0;
     while (j < moved_count)
     {
+	    ft_printf("pa\n");
         pa(ptr_topoflist_a, ptr_topoflist_b);
         j++;
     }

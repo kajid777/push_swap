@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/27 21:19:11 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:13:58 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ typedef struct Node
 	//main.c
 	Node*   make_list_y(const char *str);
 	
+	//simple_sort.c
+	int	get_min_num(Node *ptr_list);
+	void	sort_3(Node **stack_a);
+	void	sort_4(Node **stack_a, Node **stack_b);
+	void	sort_5(Node **stack_a, Node **stack_b);
+	void	simple_sort(Node **stack_a, Node **stack_b);
+	int		is_sorted(Node **stack);
+	// int		ft_lstsize(Node *head);
+	
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
 	int move_based_on_bit(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int bit_index, int stack_size);
@@ -46,6 +55,9 @@ typedef struct Node
 	
 	//utils.c
 	int	get_stack_size(Node *list_top);
+	int	is_sorted(Node **stack);
+	int	get_distance(Node **stack, int data_num);
+
 
 	//bit_operations.c
 	int get_max_num(Node *ptr_list);

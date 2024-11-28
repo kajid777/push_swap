@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:07:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/27 18:51:04 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:14:36 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,41 @@ int	get_stack_size(Node *list_top)
 }
 // ft_printf("%d\n", current_node->data_num);
 // ft_printf("%d\n", current_node->data_num);
+
+int	is_sorted(Node **stack)
+{
+	Node	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->data_num > head->next->data_num)
+		{
+			
+			return (0);
+			
+		}
+		head = head->next;
+	}
+
+	return (1);
+}
+
+int	get_distance(Node **stack, int data_num)
+{
+	Node	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	
+	while (head)
+	{
+
+		if (head->data_num == data_num)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+}
