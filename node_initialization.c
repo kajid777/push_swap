@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 20:14:34 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/11 17:28:39 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/27 21:13:32 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int	*create_int_array(int argc, char *argv[])
 	}
 	if (has_duplicates(arr, size))
 	{
-		ft_printf("Error\n");
 		free(arr);
 		return (NULL);
 	}
 	return (arr);
 }
+//ft_printf("Error\n");
 
 Node* create_node(int num)
 {
@@ -75,6 +75,25 @@ void	append_node(Node **ptr_list_top, Node *ptr_new_node)
 	}
 }
 
+void	append_node_from_back(Node **ptr_list_top, Node *ptr_new_node)
+{
+	Node	*tail;
+
+	if (*ptr_list_top == NULL)
+	{
+		ptr_new_node->next = ptr_new_node;
+		ptr_new_node->prev = ptr_new_node;
+		*ptr_list_top = ptr_new_node;
+	}
+	else
+	{
+		tail = (*ptr_list_top)->prev;
+		ptr_new_node -> next = *ptr_list_top;
+		(*ptr_list_top)->prev = ptr_new_node;
+		ptr_new_node->prev = tail;
+		tail->next = ptr_new_node;
+	}
+}
 void	print_all_node(Node *list_top)
 {
 	Node*	Node_to_be_printed;

@@ -15,23 +15,22 @@ int has_duplicates(int *arr, int size)
         {
             if (arr[i] == arr[j])
             {
-                ft_printf("Error: Duplicate value %d found at indices %d and %d\n", arr[i], i, j);
+                ft_printf("Error\n");
                 return (1);
             }
             j++;
         }
         i++;
     }
-    ft_printf("No duplicates found.\n");
-
     return (0);
 }
+//ft_printf("Error: Duplicate value %d found at indices %d and %d\n", arr[i], i, j);
+//ft_printf("No duplicates found.\n");
 
 Node *free_all_nodes(Node *topoflist)
 {
     Node *ptr_node_to_be_cleared;
     Node *tmp;
-    // Node *topoflist;
 
     if (topoflist == NULL)
         return (NULL);
@@ -44,5 +43,4 @@ Node *free_all_nodes(Node *topoflist)
     }
     free(ptr_node_to_be_cleared);
     return(topoflist);
-    //pay attention to double free!!!
 }

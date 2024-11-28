@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/26 22:15:40 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/27 21:19:11 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct Node
 }	Node;
 
 	void append_node(Node **ptr_list_top, Node *new_Node);
+    void	append_node_from_back(Node **ptr_list_top, Node *ptr_new_node);
+
+
 	void print_all_node(Node *list_top);
 	Node* create_node(int num);
 	int	ft_atoi(const char *str);
@@ -33,6 +36,9 @@ typedef struct Node
 	int *create_int_array(int argc, char *argv[]);
 	Node *free_all_nodes(Node *topoflist);
 
+	//main.c
+	Node*   make_list_y(const char *str);
+	
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
 	int move_based_on_bit(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int bit_index, int stack_size);

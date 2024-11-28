@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 19:30:04 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/12 22:02:28 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:48:12 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,28 @@ void sa(Node **ptr_topoflist_a)
 	tmp = (*ptr_topoflist_a)->next->data_num;
 	(*ptr_topoflist_a)->next->data_num = (*ptr_topoflist_a)->data_num;
 	(*ptr_topoflist_a)->data_num = tmp;
-	ft_printf("finished sa.\n");
+	ft_printf("sa\n");
 }
 //三番目のprevを最初に変更する
-	//次にtailのnextを変更する
+//次にtailのnextを変更する
 
 void sb(Node **ptr_topoflist_b)
 {
 	if ((*ptr_topoflist_b) == NULL)
 	{
-		ft_printf("finished sb. list_b has nothing.\n");
+		ft_printf("sb\n");
 		return;
 	}
 	if ((*ptr_topoflist_b)->next ==(*ptr_topoflist_b))
 	{
-		ft_printf("finished sb.\n");
+		ft_printf("sb\n");
 		return;
 	}
 	int tmp;
 	tmp = (*ptr_topoflist_b)->next->data_num;
 	(*ptr_topoflist_b)->next->data_num = (*ptr_topoflist_b)->data_num;
 	(*ptr_topoflist_b)->data_num = tmp;
-	ft_printf("finished sb.\n");
+	ft_printf("sb\n");
 }
 
 void ss(Node **ptr_topoflist_a, Node **ptr_topoflist_b)
@@ -56,15 +56,15 @@ void pa(Node **ptr_topoflist_a, Node **ptr_topoflist_b)
 	Node *tail;
 	Node *moving_node;
 	Node *tmp;
-	
-	if (*ptr_topoflist_b == NULL) // スタックAが空の場合は何もしない
-    return;
+
+	if (*ptr_topoflist_b == NULL)
+	return;
+	ft_printf("pa\n");
 	tail = (*ptr_topoflist_b)->prev;
 	moving_node = create_node((*ptr_topoflist_b)->data_num);
 	append_node(ptr_topoflist_a, moving_node);
-	
 	if ((*ptr_topoflist_b)->next == *ptr_topoflist_b)
-    {
+	{
 		free((*ptr_topoflist_b));
 		*ptr_topoflist_b = NULL;
 		return;
@@ -82,14 +82,15 @@ void pb(Node **ptr_topoflist_a, Node **ptr_topoflist_b)
 	Node *moving_node;
 	Node *tmp;
 	
-	if (*ptr_topoflist_a == NULL) // スタックAが空の場合は何もしない
-    return;
+	if (*ptr_topoflist_a == NULL)
+	return;
+	ft_printf("pb\n");
 	tail = (*ptr_topoflist_a)->prev;
 	moving_node = create_node((*ptr_topoflist_a)->data_num);
 	append_node(ptr_topoflist_b, moving_node);
 
 	if ((*ptr_topoflist_a)->next == *ptr_topoflist_a)
-    {
+	{
 		free((*ptr_topoflist_a));
 		*ptr_topoflist_a = NULL;
 		return;
