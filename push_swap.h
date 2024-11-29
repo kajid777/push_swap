@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 11:58:48 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/29 14:18:37 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ typedef struct Node
 	//utils.c
 	int	get_stack_size(Node *list_top);
 	int	is_sorted(Node **stack);
-	// int	get_distance(Node **stack, int data_num);
-	int pattern_identify(Node **stack);
+	int	pattern_identify_y(Node **stack, int data_num);
+	int pattern_identify_x(Node **stack);
 
 
 	//bit_operations.c

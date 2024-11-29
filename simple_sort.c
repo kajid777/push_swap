@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:37:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 12:14:37 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/29 14:18:55 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,33 @@
 // 	return (min);
 // }
 
-// int get_min_num(Node *ptr_list)
-// {
-// 	int min;
-// 	Node	*Node_to_be_compared;
-// 	if (ptr_list == NULL)
-// 	{
-// 		return (-1);
-// 	}
-// 	Node_to_be_compared = ptr_list;
-// 	min = Node_to_be_compared->data_num;
-// 	Node_to_be_compared = Node_to_be_compared->next;
-// 	while (Node_to_be_compared != ptr_list)
-// 	{
-// 		if (min > Node_to_be_compared->data_num)
-// 		{
-// 			min = Node_to_be_compared->data_num;
-// 		}
-// 		Node_to_be_compared = Node_to_be_compared->next;
-// 	}
-// 	return (min);
-// }
+int get_min_num(Node *ptr_list)
+{
+	int min;
+	Node	*Node_to_be_compared;
+	if (ptr_list == NULL)
+	{
+		return (-1);
+	}
+	Node_to_be_compared = ptr_list;
+	min = Node_to_be_compared->data_num;
+	Node_to_be_compared = Node_to_be_compared->next;
+	while (Node_to_be_compared != ptr_list)
+	{
+		if (min > Node_to_be_compared->data_num)
+		{
+			min = Node_to_be_compared->data_num;
+		}
+		Node_to_be_compared = Node_to_be_compared->next;
+	}
+	return (min);
+}
 
 void	sort_3(Node **stack)
 {
 	int		pattern_id;
 
-	pattern_id = pattern_identify(stack);
+	pattern_id = pattern_identify_x(stack);
 	ft_printf("test:pattern_id:%d\n" ,pattern_id);
 	if (is_sorted(stack))
 		return ;
@@ -73,64 +73,30 @@ void	sort_3(Node **stack)
 	return;
 }
 
-// void	sort_3(Node **stack_a)
-// {
-// 	Node	*head;
-// 	int		min;
-// 	int		next_min;
+void	sort_4(Node **stack_a, Node **stack_b)
+{
+	int		pattern_id;
 
-// 	head = *stack_a;
-// 	min = get_min(stack_a, -1);
-// 	next_min = get_min(stack_a, min);
-// 	if (is_sorted(stack_a))
-// 		return ;
-// 	if (head->data_num == min && head->next->data_num != next_min)
-// 	{
-// 		ra(stack_a);
-// 		sa(stack_a);
-// 		rra(stack_a);
-// 	}
-// 	else if (head->data_num == next_min)
-// 	{
-// 		if (head->next->data_num == min)
-// 			sa(stack_a);
-// 		else
-// 			rra(stack_a);
-// 	}
-// 	else
-// 	{
-// 		if (head->next->data_num == min)
-// 			ra(stack_a);
-// 		else
-// 		{
-// 			sa(stack_a);
-// 			rra(stack_a);
-// 		}
-// 	}
-// }
-
-// void	sort_4(Node **stack_a, Node **stack_b)
-// {
-// 	int	distance;
-
-// 	if (is_sorted(stack_a))
-// 		return ;
-// 	distance = get_distance(stack_a, get_min_num(*stack_a));
-// 	if (distance == 1)
-// 		ra(stack_a);
-// 	else if (distance == 2)
-// 	{
-// 		ra(stack_a);
-// 		ra(stack_a);
-// 	}
-// 	else if (distance == 3)
-// 		rra(stack_a);
-// 	if (is_sorted(stack_a))
-// 		return ;
-// 	pb(stack_a, stack_b);
-// 	sort_3(stack_a);
-// 	pa(stack_a, stack_b);
-// }
+	ft_printf("min_num;%d\n", get_min_num(*stack_a));
+	
+	if (is_sorted(stack_a))
+		return ;
+	pattern_id = pattern_identify_y(stack_a, get_min_num(*stack_a));
+	ft_printf("pattern_id_sort_4:%d\n", pattern_id);
+	
+	// if (pattern_id == 1)
+	// 	sort_4_mod_1(stack_a);
+	// else if (pattern_id == 2)
+	// 	sort_4_mod_2(stack_a);
+	// else if (pattern_id == 3)
+	// 	sort_4_mod_3(stack_a);
+	// else if (pattern_id == 4)
+	// 	sort_4_mod_4(stack_a);
+	
+	sort_3(stack_a);
+	pa(stack_a, stack_b);
+	return;
+}
 
 // void	sort_5(Node **stack_a, Node **stack_b)
 // {
@@ -171,8 +137,8 @@ void	simple_sort(Node **stack_a, Node **stack_b)
 		sa(stack_a);
 	else if (size == 3)
 		sort_3(stack_a);
-	// else if (size == 4)
-	// 	sort_4(stack_a, stack_b);
+	else if (size == 4)
+		sort_4(stack_a, stack_b);
 	// else if (size == 5)
 	// 	sort_5(stack_a, stack_b);
 }

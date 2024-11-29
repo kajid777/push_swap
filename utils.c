@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:07:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 12:24:34 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/29 14:19:29 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	get_stack_size(Node *list_top)
 // ft_printf("%d\n", current_node->data_num);
 // ft_printf("%d\n", current_node->data_num);
 
-int pattern_identify_mod(int a, int b, int c)
+int pattern_identify_x_mod(int a, int b, int c)
 {
 	if (a > b)
 	{
@@ -57,7 +57,7 @@ int pattern_identify_mod(int a, int b, int c)
 			return (3);	
 	}
 }
-int pattern_identify(Node **stack)
+int pattern_identify_x(Node **stack)
 {
 	int a;
 	int b;
@@ -71,7 +71,7 @@ int pattern_identify(Node **stack)
 	ft_printf("c:%d\n", c);
 
 	
-	return (pattern_identify_mod(a, b, c));
+	return (pattern_identify_x_mod(a, b, c));
 }
 
 
@@ -97,15 +97,18 @@ int	is_sorted(Node **stack)
 	}
 	return (1);
 }
-int	get_distance(Node **stack, int data_num)
+
+int pattern_identify_y(Node **stack, int data_num)
 {
 	Node	*head;
 	int		distance;
+	int		pattern_id;
+
 
 	distance = 0;
 	head = *stack;
 	
-	while (head)
+	while (1)
 	{
 
 		if (head->data_num == data_num)
@@ -113,5 +116,6 @@ int	get_distance(Node **stack, int data_num)
 		distance++;
 		head = head->next;
 	}
-	return (distance);
+	pattern_id = distance + 1;
+	return (pattern_id);
 }
