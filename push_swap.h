@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/28 19:13:58 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/29 11:58:48 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,18 @@ typedef struct Node
 	
 	//simple_sort.c
 	int	get_min_num(Node *ptr_list);
-	void	sort_3(Node **stack_a);
+	void	sort_3(Node **stack);
 	void	sort_4(Node **stack_a, Node **stack_b);
 	void	sort_5(Node **stack_a, Node **stack_b);
 	void	simple_sort(Node **stack_a, Node **stack_b);
 	int		is_sorted(Node **stack);
-	// int		ft_lstsize(Node *head);
+	
+	//sort_3_mods.c
+	void sort_3_mod_1(Node **stack);
+	void sort_3_mod_2(Node **stack);
+	void sort_3_mod_3(Node **stack);
+	void sort_3_mod_4(Node **stack);
+	void sort_3_mod_5(Node **stack);
 	
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
@@ -56,7 +62,8 @@ typedef struct Node
 	//utils.c
 	int	get_stack_size(Node *list_top);
 	int	is_sorted(Node **stack);
-	int	get_distance(Node **stack, int data_num);
+	// int	get_distance(Node **stack, int data_num);
+	int pattern_identify(Node **stack);
 
 
 	//bit_operations.c

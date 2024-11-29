@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 20:15:47 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/27 21:21:44 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/11/29 12:03:02 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ int main(int argc, char **argv)
         return (0);
     }
     topoflist_a = make_list_x(argc, create_int_array(argc, argv));
-    // print_all_node(topoflist_a);
+    print_all_node(topoflist_a);
     
     sort(&topoflist_a, &topoflist_b);
-    // print_all_node(topoflist_a);
+    print_all_node(topoflist_a);
     
     return (0);
 }
