@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 14:18:37 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:03:03 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,17 @@ typedef struct Node
 	void sort_3_mod_3(Node **stack);
 	void sort_3_mod_4(Node **stack);
 	void sort_3_mod_5(Node **stack);
-	
+	//sort_4_mods.c
+	void sort_4_mod_1(Node **stack_a, Node **stack_b);
+	void sort_4_mod_2(Node **stack_a, Node **stack_b);
+	void sort_4_mod_3(Node **stack_a, Node **stack_b);
+	void sort_4_mod_4(Node **stack_a, Node **stack_b);
+	//sort_5_mods.c
+	void sort_5_mod_1(Node **stack_a, Node **stack_b);
+	void sort_5_mod_2(Node **stack_a, Node **stack_b);
+	void sort_5_mod_3(Node **stack_a, Node **stack_b);
+	void sort_5_mod_4(Node **stack_a, Node **stack_b);
+	void sort_5_mod_5(Node **stack_a, Node **stack_b);
 	//sort.c
 	void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b);
 	int move_based_on_bit(Node **ptr_topoflist_a, Node **ptr_topoflist_b, int bit_index, int stack_size);

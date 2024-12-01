@@ -6,7 +6,7 @@
 #    By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 20:14:26 by dkajiwar          #+#    #+#              #
-#    Updated: 2024/11/29 11:54:38 by dkajiwar         ###   ########.fr        #
+#    Updated: 2024/12/01 16:03:34 by dkajiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 HEAD = push_swap.h
-SRCS = main.c node_initialization.c bit_operations.c utils.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c simple_sort.c sort_3_mods.c
+SRCS = main.c node_initialization.c bit_operations.c utils.c node_operations_1.c node_operations_2.c node_operations_3.c sort.c handle_errors.c simple_sort.c sort_3_mods.c sort_4_mods.c sort_5_mods.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -35,6 +35,9 @@ $(OBJS): $(SRCS)
 	$(CC) $(CFLAGS) -c node_initialization.c -o node_initialization.o
 	$(CC) $(CFLAGS) -c simple_sort.c -o simple_sort.o
 	$(CC) $(CFLAGS) -c sort_3_mods.c -o sort_3_mods.o
+	$(CC) $(CFLAGS) -c sort_4_mods.c -o sort_4_mods.o
+	$(CC) $(CFLAGS) -c sort_5_mods.c -o sort_5_mods.o
+
 
 
 

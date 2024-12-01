@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:37:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 14:18:55 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:10:42 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,45 +84,40 @@ void	sort_4(Node **stack_a, Node **stack_b)
 	pattern_id = pattern_identify_y(stack_a, get_min_num(*stack_a));
 	ft_printf("pattern_id_sort_4:%d\n", pattern_id);
 	
-	// if (pattern_id == 1)
-	// 	sort_4_mod_1(stack_a);
-	// else if (pattern_id == 2)
-	// 	sort_4_mod_2(stack_a);
-	// else if (pattern_id == 3)
-	// 	sort_4_mod_3(stack_a);
-	// else if (pattern_id == 4)
-	// 	sort_4_mod_4(stack_a);
-	
-	sort_3(stack_a);
-	pa(stack_a, stack_b);
+	if (pattern_id == 1)
+		sort_4_mod_1(stack_a, stack_b);
+	else if (pattern_id == 2)
+		sort_4_mod_2(stack_a, stack_b);
+	else if (pattern_id == 3)
+		sort_4_mod_3(stack_a, stack_b);
+	else if (pattern_id == 4)
+		sort_4_mod_4(stack_a, stack_b);
 	return;
 }
 
-// void	sort_5(Node **stack_a, Node **stack_b)
-// {
-// 	int	distance;
+void	sort_5(Node **stack_a, Node **stack_b)
+{
+	int		pattern_id;
+
+	ft_printf("min_num;%d\n", get_min_num(*stack_a));
 	
-// 	distance = get_distance(stack_a, get_min(stack_a, -1));
-// 	if (distance == 1)
-// 		ra(stack_a);
-// 	else if (distance == 2)
-// 	{
-// 		ra(stack_a);
-// 		ra(stack_a);
-// 	}
-// 	else if (distance == 3)
-// 	{
-// 		rra(stack_a);
-// 		rra(stack_a);
-// 	}
-// 	else if (distance == 4)
-// 		rra(stack_a);
-// 	if (is_sorted(stack_a))
-// 		return ;
-// 	pb(stack_a, stack_b);
-// 	sort_4(stack_a, stack_b);
-// 	pa(stack_a, stack_b);
-// }
+	if (is_sorted(stack_a))
+		return ;
+	pattern_id = pattern_identify_y(stack_a, get_min_num(*stack_a));
+	ft_printf("pattern_id_sort_5:%d\n", pattern_id);
+	
+	if (pattern_id == 1)
+		sort_5_mod_1(stack_a, stack_b);
+	else if (pattern_id == 2)
+		sort_5_mod_2(stack_a, stack_b);
+	else if (pattern_id == 3)
+		sort_5_mod_3(stack_a, stack_b);
+	else if (pattern_id == 4)
+		sort_5_mod_4(stack_a, stack_b);
+	else if (pattern_id == 5)
+		sort_5_mod_5(stack_a, stack_b);
+	return;
+}
 
 void	simple_sort(Node **stack_a, Node **stack_b)
 {
@@ -139,6 +134,6 @@ void	simple_sort(Node **stack_a, Node **stack_b)
 		sort_3(stack_a);
 	else if (size == 4)
 		sort_4(stack_a, stack_b);
-	// else if (size == 5)
-	// 	sort_5(stack_a, stack_b);
+	else if (size == 5)
+		sort_5(stack_a, stack_b);
 }
