@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/01 16:03:03 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:18:13 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct Node
 	void append_node(Node **ptr_list_top, Node *new_Node);
     void	append_node_from_back(Node **ptr_list_top, Node *ptr_new_node);
 
-
+	//node_initialization.c
 	void print_all_node(Node *list_top);
 	Node* create_node(int num);
 	int	ft_atoi(const char *str);
@@ -36,8 +36,16 @@ typedef struct Node
 	int *create_int_array(int argc, char *argv[]);
 	Node *free_all_nodes(Node *topoflist);
 
+	//coordinate_compression.c
+	void selection_sort(int *arr, int arr_size);
+	int *copy_array(int *arr, int arr_size);
+	int index_finder(int *copied_arr, int arr_size, int num);
+	void set_coordinate(int *arr, int *copied_arr, int *dest_arr, int arr_size);
+	int *coordinate_compression(int *arr, int arr_size);
+
 	//main.c
 	Node*   make_list_y(const char *str);
+	int *convert_to_int_array(char **str_array, int *size);
 	
 	//simple_sort.c
 	int	get_min_num(Node *ptr_list);

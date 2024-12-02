@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 20:14:34 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/27 21:13:32 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:45:50 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ int	*create_int_array(int argc, char *argv[])
 	}
 	while (i < size)
 	{
-		arr[i] = atoi(argv[i + 1]);
+		arr[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
+	arr = coordinate_compression(arr, size);
 	if (has_duplicates(arr, size))
 	{
 		free(arr);
@@ -47,6 +48,8 @@ Node* create_node(int num)
 	Node*	ptr_new_node;
 
 	ptr_new_node = (Node *)malloc(sizeof(Node));
+	if (ptr_new_node == NULL)
+		return (NULL);
 	ptr_new_node->data_num = num;
 	ptr_new_node->next = NULL;
 	ptr_new_node->prev = NULL;

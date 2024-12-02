@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:37:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/01 16:10:42 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:14:54 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	sort_3(Node **stack)
 	int		pattern_id;
 
 	pattern_id = pattern_identify_x(stack);
-	ft_printf("test:pattern_id:%d\n" ,pattern_id);
+	// ft_printf("test:pattern_id:%d\n" ,pattern_id);
 	if (is_sorted(stack))
 		return ;
 	if (pattern_id == 1)
@@ -77,12 +77,12 @@ void	sort_4(Node **stack_a, Node **stack_b)
 {
 	int		pattern_id;
 
-	ft_printf("min_num;%d\n", get_min_num(*stack_a));
+	// ft_printf("min_num;%d\n", get_min_num(*stack_a));
 	
 	if (is_sorted(stack_a))
 		return ;
 	pattern_id = pattern_identify_y(stack_a, get_min_num(*stack_a));
-	ft_printf("pattern_id_sort_4:%d\n", pattern_id);
+	// ft_printf("pattern_id_sort_4:%d\n", pattern_id);
 	
 	if (pattern_id == 1)
 		sort_4_mod_1(stack_a, stack_b);
@@ -99,12 +99,12 @@ void	sort_5(Node **stack_a, Node **stack_b)
 {
 	int		pattern_id;
 
-	ft_printf("min_num;%d\n", get_min_num(*stack_a));
+	// ft_printf("min_num;%d\n", get_min_num(*stack_a));
 	
 	if (is_sorted(stack_a))
 		return ;
 	pattern_id = pattern_identify_y(stack_a, get_min_num(*stack_a));
-	ft_printf("pattern_id_sort_5:%d\n", pattern_id);
+	// ft_printf("pattern_id_sort_5:%d\n", pattern_id);
 	
 	if (pattern_id == 1)
 		sort_5_mod_1(stack_a, stack_b);

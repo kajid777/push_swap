@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:07:18 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 14:19:29 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/01 16:15:49 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ int pattern_identify_x(Node **stack)
 	int c;
 
 	a = (*stack)->data_num;
-	ft_printf("a:%d\n", a);
+	// ft_printf("a:%d\n", a);
 	b = (*stack)->next->data_num;
-	ft_printf("b:%d\n", b);
+	// ft_printf("b:%d\n", b);
 	c = (*stack)->next->next->data_num;
-	ft_printf("c:%d\n", c);
+	// ft_printf("c:%d\n", c);
 
 	
 	return (pattern_identify_x_mod(a, b, c));
