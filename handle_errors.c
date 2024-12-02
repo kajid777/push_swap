@@ -14,10 +14,7 @@ int has_duplicates(int *arr, int size)
         while(j < size)
         {
             if (arr[i] == arr[j])
-            {
-                ft_printf("Error\n");
                 return (1);
-            }
             j++;
         }
         i++;

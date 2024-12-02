@@ -1,27 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// void selection_sort(int *arr, int arr_size)
+// {
+//  	// int size;
+
+// 	// size = sizeof(arr) / sizeof(arr[0]);
+//     for (int i = 0; i < arr_size - 1; i++) {
+//         int min_index = i; // 現在の位置を最小インデックスとして初期化
+//         for (int j = i + 1; j < arr_size; j++) {
+//             // 未ソート部分から最小の要素のインデックスを見つける
+//             if (arr[j] < arr[min_index]) {
+//                 min_index = j;
+//             }
+//         }
+//         // 最小値を現在の位置と交換
+//         if (min_index != i) {
+//             int temp = arr[i];
+//             arr[i] = arr[min_index];
+//             arr[min_index] = temp;
+//         }
+//     }
+// }
+
 void selection_sort(int *arr, int arr_size)
 {
- 	// int size;
+    int i = 0; // 外側のループ用のカウンタ
+    int min_index; // 最小インデックスを保持する変数
+    int j; // 内側のループ用のカウンタ
+    int temp; // 要素を交換するための一時変数
 
-	// size = sizeof(arr) / sizeof(arr[0]);
-    for (int i = 0; i < arr_size - 1; i++) {
-        int min_index = i; // 現在の位置を最小インデックスとして初期化
-        for (int j = i + 1; j < arr_size; j++) {
+    while (i < arr_size - 1)
+	{
+        min_index = i; // 現在の位置を最小インデックスとして初期化
+        j = i + 1; // 内側のループ用のカウンタを初期化
+        while (j < arr_size)
+		{
             // 未ソート部分から最小の要素のインデックスを見つける
-            if (arr[j] < arr[min_index]) {
+            if (arr[j] < arr[min_index])
                 min_index = j;
-            }
+            j++; // 内側のカウンタをインクリメント
         }
-        // 最小値を現在の位置と交換
-        if (min_index != i) {
-            int temp = arr[i];
+        if (min_index != i)// 最小値を現在の位置と交換
+		{
+            temp = arr[i];
             arr[i] = arr[min_index];
             arr[min_index] = temp;
         }
+        i++; // 外側のカウンタをインクリメント
     }
 }
+
 int *copy_array(int *arr, int arr_size)
 {
     // int arr_size;
@@ -68,10 +97,10 @@ void	set_coordinate(int *arr, int *copied_arr, int *dest_arr, int arr_size)
 	i = 0;
 	// arr_size = sizeof(copied_arr) / sizeof(copied_arr[0]);
 	selection_sort(copied_arr, arr_size);
-    printf("sorted_array:");
-	for (int i = 0; i < arr_size; i++) {
-        printf("%d ", copied_arr[i]);
-    }
+    // printf("sorted_array:");
+	// for (int i = 0; i < arr_size; i++) {
+    //     printf("%d ", copied_arr[i]);
+    // }
 	while(i < arr_size)
 	{
 		dest_arr[i] = index_finder(copied_arr, arr_size, arr[i]);
@@ -92,10 +121,10 @@ int *coordinate_compression(int *arr, int arr_size)
 	copied_arr = copy_array(arr, arr_size);
 	if (copied_arr == NULL)
 		return (NULL);
-	printf("copied_array:");
-	for (int i = 0; i < arr_size; i++) {
-        printf("%d ", copied_arr[i]);
-    }
+	// printf("copied_array:");
+	// for (int i = 0; i < arr_size; i++) {
+    //     printf("%d ", copied_arr[i]);
+    // }
 	dest_arr = (int*)malloc(sizeof(int) * arr_size);
 	if (dest_arr == NULL)
 		return (NULL);

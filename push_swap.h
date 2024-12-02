@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/02 11:18:13 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:20:38 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ typedef struct Node
 	//node_operations_3.c
 	void rra(Node **topoflist_a);
 	void rrb(Node **topoflist_b);
-	void rrr(Node **topoflist_a, Node **topoflist_b);	
-
+	void rrr(Node **topoflist_a, Node **topoflist_b);
+	//errors.c
+	void end_with_error();
 #endif  // PUSH_SWAP_H

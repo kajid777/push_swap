@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 20:14:34 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/02 11:45:50 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:35:09 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ int	*create_int_array(int argc, char *argv[])
 	size = argc - 1;
 	arr = malloc(size * sizeof(int));
 	if (arr == NULL)
-	{
-		ft_printf("Memory allocation failed\n");
-		exit(1);
-	}
+		end_with_error();
 	while (i < size)
 	{
 		arr[i] = ft_atoi(argv[i + 1]);
@@ -37,7 +34,7 @@ int	*create_int_array(int argc, char *argv[])
 	if (has_duplicates(arr, size))
 	{
 		free(arr);
-		return (NULL);
+		end_with_error();
 	}
 	return (arr);
 }
