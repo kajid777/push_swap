@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:30:32 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/29 12:13:18 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:26:32 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void sort_3_mod_4(Node **stack)
 
 void sort_3_mod_5(Node **stack)
 {
-	ft_printf("test:5\n");
 	ft_printf("sa\n");
 	sa(stack);
 	ft_printf("rra\n");

@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:26:21 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/02 13:20:38 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 15:01:07 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,6 @@ typedef struct Node
 	void rrr(Node **topoflist_a, Node **topoflist_b);
 	//errors.c
 	void end_with_error();
+	int contains_invalid_char(const char *str);
+
 #endif  // PUSH_SWAP_H

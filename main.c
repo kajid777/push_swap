@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 20:15:47 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/12/02 14:21:00 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 15:00:35 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,9 @@ Node*   make_list_y(const char *str)
 
     topoflist = NULL;
     i = 0;
+    
     int_array = convert_to_int_array(ft_split(str, ' '), &arr_size);
+    // print_int_array(int_array, arr_size);
     if (int_array == NULL)
         end_with_error();
     compressed_array = coordinate_compression(int_array, arr_size);
@@ -123,17 +125,18 @@ int main(int argc, char **argv)
     topoflist_b = NULL;
     if (argc == 2)
     {
-        // ft_printf("test\n");
+        if (contains_invalid_char(argv[1]))
+            end_with_error();
         topoflist_a = make_list_y(argv[1]);
-        print_all_node(topoflist_a);
+        // print_all_node(topoflist_a);
         sort(&topoflist_a, &topoflist_b);
-        print_all_node(topoflist_a);
+        // print_all_node(topoflist_a);
         return (0);
     }
     topoflist_a = make_list_x(argc, create_int_array(argc, argv));
-    print_all_node(topoflist_a);
+    // print_all_node(topoflist_a);
     sort(&topoflist_a, &topoflist_b);
-    print_all_node(topoflist_a);
+    // print_all_node(topoflist_a);
     free_all_nodes(topoflist_a);
     return (0);
 }

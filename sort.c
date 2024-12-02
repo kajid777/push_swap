@@ -6,7 +6,7 @@
 /*   By: dkajiwar <dkajiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 22:47:34 by dkajiwar          #+#    #+#             */
-/*   Updated: 2024/11/28 20:02:24 by dkajiwar         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:42:40 by dkajiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ void sort(Node **ptr_topoflist_a, Node **ptr_topoflist_b)
     int max_bit_len;
     int init_stack_a_size;
 	int i;
-
+    
+    if (*ptr_topoflist_a == NULL)
+    {
+        end_with_error();
+    }
 	max_bit_len = get_max_bit_len(*ptr_topoflist_a);
 	init_stack_a_size = get_stack_size(*ptr_topoflist_a);
 	i = 0;
